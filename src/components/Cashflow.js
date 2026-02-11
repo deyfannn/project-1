@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function DPT() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = () => {
       fetch(
-        "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLj55CUDMkGsiTwuQt_TrmfsHJLez_vSyqxCbYVDndzYrjkT0kIOvmzDd05soQsUgmcoINFrA_26C5NppPVW8m2ZemvG94ZvO53mayJQg6FNQTEa0d_5v92wuDidBJ2vHY6QtDCVfz_CSofrenl9G5VAqq7yJTANQvQDJaO1LVO2oKCmIvbyN1DAWTFwb3CNTG7OhxsrtK9Wmj3gcDOC6s-bKW5GhfIpVXYg_D0sZh-Q7fgj6w37YMa3Z3KNimAUxFeU1pUVdmcw5Cwqx81cluvn6m80jICKnUUIEBkM&lib=MtQGftHJKYgNpK4blG8_kLmXIFT4xp1Bi"
+        "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhgTpkzjdy09CugVj1ZrGIxesjJq92U6ZTlz32LnSDrccjCOg0uY7_fkF0rWp-7CzlCNePVM7h9BVLWJYX-0Rj56mQTeQDtpWvpY8FpFlT-wxNbZ0I6zYanbOprNXBXzZseSVs-avPDqyusuvKmcpI7ubDtBMhdjavhZMX3B5qWOU3RkLM0FhwAQKTvzff5Q7_GsWn5Efjosfw2ps7FS8ZG6FXkeAVviKQ-V2pO3nadrKaGlwiTCEapMVJ9pxZUH-8TUVnWExL8P3eskQWXFVxWLs-AjBq2mD6mOQuq&lib=MtQGftHJKYgNpK4blG8_kLmXIFT4xp1Bi"
       )
         .then((res) => res.json())
         .then(setData)
@@ -68,6 +66,17 @@ export default function DPT() {
               : !data
               ? "Memuat data..."
               : Number(data.UPAH).toLocaleString("id-ID")}
+          </span>
+        </div>
+
+          <div className="dpt-row-kasbon">
+          <span className="dpt-label">➤ Saldo Kas</span>
+          <span className="dpt-value">
+            {error
+              ? "Gagal memuat data"
+              : !data
+              ? "Memuat data..."
+              : Number(data.SALDOKAS).toLocaleString("id-ID")}
           </span>
         </div>
 
