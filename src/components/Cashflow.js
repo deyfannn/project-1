@@ -82,9 +82,13 @@ export default function DPT() {
           </span>
         </div>
 
-        <button className="back-button" onClick={() => navigate(-1)}>
-          Back
-        </button>
+        <button
+  className="back-button"
+  onClick={() => window.location.href = "https://docs.google.com/spreadsheets/d/17eEO_kZYX7BiglqcvFjEJAgeyXZxQ4cKjWShZsuk4BM/edit?gid=224439635#gid=224439635"}
+>
+ Spreadsheet
+</button>
+
       </div>
     </div>
   );
