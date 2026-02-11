@@ -81,7 +81,7 @@ export default function DPT() {
         </div>
 
         <div className="dpt-row-kasbon">
-          <span className="dpt-label">➤ MArgin</span>
+          <span className="dpt-label">➤ Margin</span>
           <span className="dpt-value">
             {error
               ? "Gagal memuat data"
